@@ -6,100 +6,195 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>UptimePulse Dashboard</title>
 <style>
-body {
-  font-family: Arial, sans-serif;
-  background: #f5f7fa;
-  margin: 24px;
-}
-.card {
-  background: white;
-  border-radius: 12px;
-  padding: 20px;
-  margin-bottom: 16px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-}
-.grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 12px;
-}
-.big {
-  font-size: 24px;
-  font-weight: 700;
-}
-.muted {
-  color: #666;
-  font-size: 13px;
-}
-.status-up {
-  color: #0a8a3a;
-  font-weight: 700;
-}
-.status-down {
-  color: #c62828;
-  font-weight: 700;
-}
-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 12px;
-}
-th {
-  background: #f0f2f5;
-  text-align: left;
-  padding: 10px;
-  font-size: 13px;
-}
-td {
-  border-bottom: 1px solid #eee;
-  padding: 10px;
-  font-size: 14px;
-}
+  :root {
+    --bg: #0b1220;
+    --panel: #0f1a30;
+    --panel2: #0b152a;
+    --border: #1e2a44;
+    --text: #e5e7eb;
+    --muted: #9aa7bd;
+    --brand: #38bdf8;
+    --up: #22c55e;
+    --down: #ef4444;
+  }
+
+  body {
+    font-family: Arial, sans-serif;
+    background: radial-gradient(1200px 700px at 20% 10%, #0f2a4a 0%, var(--bg) 55%);
+    color: var(--text);
+    margin: 0;
+    padding: 28px;
+  }
+
+  .wrap {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: 18px;
+  }
+
+  .title {
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--brand);
+    letter-spacing: 0.2px;
+  }
+
+  .subtitle {
+    color: var(--muted);
+    font-size: 13px;
+  }
+
+  .card {
+    background: linear-gradient(180deg, var(--panel) 0%, var(--panel2) 100%);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 18px;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.35);
+    margin-bottom: 14px;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-bottom: 14px;
+  }
+
+  @media (max-width: 900px) {
+    .grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .label {
+    color: var(--muted);
+    font-size: 12px;
+    margin-bottom: 6px;
+  }
+
+  .value {
+    font-size: 22px;
+    font-weight: 800;
+  }
+
+  .status-up {
+    color: var(--up);
+    font-weight: 800;
+  }
+
+  .status-down {
+    color: var(--down);
+    font-weight: 800;
+  }
+
+  .mono {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    font-size: 13px;
+    color: #c7d2fe;
+  }
+
+  .pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px;
+    border-radius: 999px;
+    border: 1px solid var(--border);
+    background: rgba(255,255,255,0.03);
+    font-weight: 800;
+  }
+
+  .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 999px;
+    background: var(--brand);
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+  }
+
+  th {
+    text-align: left;
+    font-size: 12px;
+    color: var(--muted);
+    padding: 10px 8px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  td {
+    padding: 10px 8px;
+    border-bottom: 1px solid rgba(30,42,68,0.7);
+    vertical-align: top;
+    font-size: 14px;
+  }
+
+  .reason {
+    color: #d1d5db;
+  }
 </style>
 </head>
 <body>
+  <div class="wrap">
+    <div class="header">
+      <div>
+        <div class="title">UptimePulse</div>
+        <div class="subtitle">Generated UTC 2025-12-17T07:15:12.205490+00:00</div>
+      </div>
+      <div class="pill">
+        <span class="dot"></span>
+        <span>Live status</span>
+      </div>
+    </div>
 
-<div class="card">
-  <div class="big">UptimePulse Dashboard</div>
-  <div class="muted">Generated UTC 2025-12-17T07:08:05.739364+00:00</div>
-</div>
+    <div class="card">
+      <div class="label">Current status</div>
+      <div class="value">
+        <span class="status-up">UP</span>
+      </div>
+      <div class="subtitle">Last checked UTC 2025-12-17T07:15:06.683196</div>
+      <div class="subtitle">Reason OK https://example.com 200</div>
+    </div>
 
-<div class="card">
-  <div class="big">Current status <span class="status-up">UP</span></div>
-  <div class="muted">Last checked UTC 2025-12-17T07:08:05.735548</div>
-  <div class="muted">Reason OK https://example.com 200</div>
-</div>
+    <div class="grid">
+      <div class="card">
+        <div class="label">Uptime last 30 samples</div>
+        <div class="value">100.00%</div>
+      </div>
+      <div class="card">
+        <div class="label">Last outage duration</div>
+        <div class="value">-</div>
+      </div>
+      <div class="card">
+        <div class="label">Samples shown</div>
+        <div class="value">30</div>
+      </div>
+    </div>
 
-<div class="grid">
-  <div class="card">
-    <div class="muted">Uptime last 30 samples</div>
-    <div class="big">100.00%</div>
+    <div class="card">
+      <div class="label">Latest samples</div>
+      <table>
+        <thead>
+          <tr>
+            <th>Timestamp UTC</th>
+            <th>Status</th>
+            <th>Reason</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td class='mono'>2025-12-17T07:15:06.683196</td><td class='status-up'>UP</td><td class='reason'>OK https://example.com 200</td></tr><tr><td class='mono'>2025-12-17T07:15:06.252178</td><td class='status-up'>UP</td><td class='reason'>OK https://example.com 200</td></tr><tr><td class='mono'>2025-12-17T07:15:03.636198</td><td class='status-up'>UP</td><td class='reason'>OK https://example.com 200</td></tr><tr><td class='mono'>2025-12-17T07:15:01.623995</td><td class='status-up'>UP</td><td class='reason'>OK https://example.com 200</td></tr><tr><td class='mono'>2025-12-17T07:14:50.587490</td><td class='status-up'>UP</td><td class='reason'>OK https://example.com 200</td></tr><tr><td class='mono'>2025-12-17T07:14:36.647920</td><td class='status-up'>UP</td><td class='reason'>OK https://example.com 200</td></tr><tr><td class='mono'>2025-12-17T07:14:36.221302</td><td class='status-up'>UP</td><td class='reason'>OK https://example.com 200</td></tr><tr><td class='mono'>2025-12-17T07:14:33.597139</td><td class='status-up'>UP</td><td class='reason'>OK https://example.com 200</td></tr><tr><td class='mono'>2025-12-17T07:14:31.579870</td><td class='status-up'>UP</td><td class='reason'>OK https://example.com 200</td></tr><tr><td class='mono'>2025-12-17T07:14:20.546658</td><td class='status-up'>UP</td><td class='reason'>OK https://example.com 200</td></tr><tr><td class='mono'>2025-12-17T07:14:06.607271</td><td class='status-up'>UP</td><td class='reason'>OK https://example.com 200</td></tr><tr><td class='mono'>2025-12-17T07:14:06.181885</td><td class='status-up'>UP</td><td class='reason'>OK https://example.com 200</td></tr><tr><td class='mono'>2025-12-17T07:14:03.561772</td><td class='status-up'>UP</td><td class='reason'>OK https://example.com 200</td></tr><tr><td class='mono'>2025-12-17T07:14:01.531067</td><td class='status-up'>UP</td><td class='reason'>OK https://example.com 200</td></tr><tr><td class='mono'>2025-12-17T07:13:50.510258</td><td class='status-up'>UP</td><td class='reason'>OK https://example.com 200</td></tr><tr><td class='mono'>2025-12-17T07:13:36.572992</td><td class='status-up'>UP</td><td class='reason'>OK https://example.com 200</td></tr><tr><td class='mono'>2025-12-17T07:13:36.141955</td><td class='status-up'>UP</td><td class='reason'>OK https://example.com 200</td></tr><tr><td class='mono'>2025-12-17T07:13:33.522389</td><td class='status-up'>UP</td><td class='reason'>OK https://example.com 200</td></tr><tr><td class='mono'>2025-12-17T07:13:31.492247</td><td class='status-up'>UP</td><td class='reason'>OK https://example.com 200</td></tr><tr><td class='mono'>2025-12-17T07:13:20.474441</td><td class='status-up'>UP</td><td class='reason'>OK https://example.com 200</td></tr><tr><td class='mono'>2025-12-17T07:13:06.533297</td><td class='status-up'>UP</td><td class='reason'>OK https://example.com 200</td></tr><tr><td class='mono'>2025-12-17T07:13:06.105580</td><td class='status-up'>UP</td><td class='reason'>OK https://example.com 200</td></tr><tr><td class='mono'>2025-12-17T07:13:03.487338</td><td class='status-up'>UP</td><td class='reason'>OK https://example.com 200</td></tr><tr><td class='mono'>2025-12-17T07:13:01.457563</td><td class='status-up'>UP</td><td class='reason'>OK https://example.com 200</td></tr><tr><td class='mono'>2025-12-17T07:12:50.206166</td><td class='status-up'>UP</td><td class='reason'>OK https://example.com 200</td></tr><tr><td class='mono'>2025-12-17T07:12:36.497449</td><td class='status-up'>UP</td><td class='reason'>OK https://example.com 200</td></tr><tr><td class='mono'>2025-12-17T07:12:36.069030</td><td class='status-up'>UP</td><td class='reason'>OK https://example.com 200</td></tr><tr><td class='mono'>2025-12-17T07:12:33.454905</td><td class='status-up'>UP</td><td class='reason'>OK https://example.com 200</td></tr><tr><td class='mono'>2025-12-17T07:12:31.421155</td><td class='status-up'>UP</td><td class='reason'>OK https://example.com 200</td></tr><tr><td class='mono'>2025-12-17T07:12:20.166905</td><td class='status-up'>UP</td><td class='reason'>OK https://example.com 200</td></tr>
+        </tbody>
+      </table>
+    </div>
   </div>
-  <div class="card">
-    <div class="muted">Last outage duration</div>
-    <div class="big">-</div>
-  </div>
-  <div class="card">
-    <div class="muted">Samples shown</div>
-    <div class="big">30</div>
-  </div>
-</div>
-
-<div class="card">
-  <div class="big">Latest samples</div>
-  <table>
-    <thead>
-      <tr>
-        <th>Timestamp UTC</th>
-        <th>Status</th>
-        <th>Reason</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr><td>2025-12-17T07:08:05.735548</td><td class='status-up'>UP</td><td>OK https://example.com 200</td></tr><tr><td>2025-12-17T07:08:03.132264</td><td class='status-up'>UP</td><td>OK https://example.com 200</td></tr><tr><td>2025-12-17T07:08:00.048928</td><td class='status-up'>UP</td><td>OK https://example.com 200</td></tr><tr><td>2025-12-17T07:07:49.822636</td><td class='status-up'>UP</td><td>OK https://example.com 200</td></tr><tr><td>2025-12-17T07:07:35.876332</td><td class='status-up'>UP</td><td>OK https://example.com 200</td></tr><tr><td>2025-12-17T07:07:35.699892</td><td class='status-up'>UP</td><td>OK https://example.com 200</td></tr><tr><td>2025-12-17T07:07:33.098376</td><td class='status-up'>UP</td><td>OK https://example.com 200</td></tr><tr><td>2025-12-17T07:07:30.014146</td><td class='status-up'>UP</td><td>OK https://example.com 200</td></tr><tr><td>2025-12-17T07:07:05.842171</td><td class='status-up'>UP</td><td>OK https://example.com 200</td></tr><tr><td>2025-12-17T07:07:05.665371</td><td class='status-up'>UP</td><td>OK https://example.com 200</td></tr><tr><td>2025-12-17T07:07:03.062109</td><td class='status-up'>UP</td><td>OK https://example.com 200</td></tr><tr><td>2025-12-17T07:06:59.977568</td><td class='status-up'>UP</td><td>OK https://example.com 200</td></tr><tr><td>2025-12-17T07:06:35.805690</td><td class='status-up'>UP</td><td>OK https://example.com 200</td></tr><tr><td>2025-12-17T07:06:33.027103</td><td class='status-up'>UP</td><td>OK https://example.com 200</td></tr><tr><td>2025-12-17T07:06:29.943543</td><td class='status-up'>UP</td><td>OK https://example.com 200</td></tr><tr><td>2025-12-17T07:06:05.769806</td><td class='status-up'>UP</td><td>OK https://example.com 200</td></tr><tr><td>2025-12-17T07:06:02.993438</td><td class='status-up'>UP</td><td>OK https://example.com 200</td></tr><tr><td>2025-12-17T07:05:59.908197</td><td class='status-up'>UP</td><td>OK https://example.com 200</td></tr><tr><td>2025-12-17T07:05:35.739163</td><td class='status-up'>UP</td><td>OK https://example.com 200</td></tr><tr><td>2025-12-17T07:05:32.954384</td><td class='status-up'>UP</td><td>OK https://example.com 200</td></tr><tr><td>2025-12-17T07:05:29.877913</td><td class='status-up'>UP</td><td>OK https://example.com 200</td></tr><tr><td>2025-12-17T07:05:05.701248</td><td class='status-up'>UP</td><td>OK https://example.com 200</td></tr><tr><td>2025-12-17T07:05:02.925061</td><td class='status-up'>UP</td><td>OK https://example.com 200</td></tr><tr><td>2025-12-17T07:04:59.842662</td><td class='status-up'>UP</td><td>OK https://example.com 200</td></tr><tr><td>2025-12-17T07:04:35.651154</td><td class='status-up'>UP</td><td>OK https://example.com 200</td></tr><tr><td>2025-12-17T07:04:32.884315</td><td class='status-up'>UP</td><td>OK https://example.com 200</td></tr><tr><td>2025-12-17T07:04:29.808373</td><td class='status-up'>UP</td><td>OK https://example.com 200</td></tr><tr><td>2025-12-17T07:04:05.616891</td><td class='status-up'>UP</td><td>OK https://example.com 200</td></tr><tr><td>2025-12-17T07:04:02.833182</td><td class='status-up'>UP</td><td>OK https://example.com 200</td></tr><tr><td>2025-12-17T07:03:59.761605</td><td class='status-up'>UP</td><td>OK https://example.com 200</td></tr>
-    </tbody>
-  </table>
-</div>
-
 </body>
 </html>
