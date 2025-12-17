@@ -18,9 +18,14 @@ body {
   margin-bottom: 16px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.08);
 }
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
 .big {
   font-size: 24px;
-  font-weight: bold;
+  font-weight: 700;
 }
 .muted {
   color: #666;
@@ -28,11 +33,11 @@ body {
 }
 .status-up {
   color: #0a8a3a;
-  font-weight: bold;
+  font-weight: 700;
 }
 .status-down {
   color: #c62828;
-  font-weight: bold;
+  font-weight: 700;
 }
 table {
   width: 100%;
@@ -56,12 +61,28 @@ td {
 
 <div class="card">
   <div class="big">UptimePulse Dashboard</div>
-  <div class="muted">Updated UTC 2025-12-17T06:39:53.834073+00:00</div>
+  <div class="muted">Generated UTC 2025-12-17T07:08:05.739364+00:00</div>
 </div>
 
 <div class="card">
-  <div class="muted">Uptime based on last 30 samples</div>
-  <div class="big">100.00%</div>
+  <div class="big">Current status <span class="status-up">UP</span></div>
+  <div class="muted">Last checked UTC 2025-12-17T07:08:05.735548</div>
+  <div class="muted">Reason OK https://example.com 200</div>
+</div>
+
+<div class="grid">
+  <div class="card">
+    <div class="muted">Uptime last 30 samples</div>
+    <div class="big">100.00%</div>
+  </div>
+  <div class="card">
+    <div class="muted">Last outage duration</div>
+    <div class="big">-</div>
+  </div>
+  <div class="card">
+    <div class="muted">Samples shown</div>
+    <div class="big">30</div>
+  </div>
 </div>
 
 <div class="card">
@@ -75,7 +96,7 @@ td {
       </tr>
     </thead>
     <tbody>
-      <tr><td>2025-12-17T06:39:53.830873</td><td class='status-up'>UP</td><td>OK https://example.com 200</td></tr><tr><td>2025-12-17T06:39:31.737203</td><td class='status-up'>UP</td><td>OK https://example.com 200</td></tr><tr><td>2025-12-17T06:39:27.475010</td><td class='status-up'>UP</td><td>OK https://example.com 200</td></tr><tr><td>2025-12-17T06:39:23.798232</td><td class='status-up'>UP</td><td>OK https://example.com 200</td></tr><tr><td>2025-12-17T06:39:01.699537</td><td class='status-up'>UP</td><td>OK https://example.com 200</td></tr><tr><td>2025-12-17T06:38:57.438551</td><td class='status-up'>UP</td><td>OK https://example.com 200</td></tr><tr><td>2025-12-17T06:38:53.763415</td><td class='status-up'>UP</td><td>OK https://example.com 200</td></tr><tr><td>2025-12-17T06:38:31.665081</td><td class='status-up'>UP</td><td>OK https://example.com 200</td></tr><tr><td>2025-12-17T06:38:27.163484</td><td class='status-up'>UP</td><td>OK https://example.com 200</td></tr><tr><td>2025-12-17T06:38:22.681216</td><td class='status-up'>UP</td><td>OK https://example.com 200</td></tr><tr><td>2025-12-17T06:38:01.628125</td><td class='status-up'>UP</td><td>OK https://example.com 200</td></tr><tr><td>2025-12-17T06:37:57.068607</td><td class='status-up'>UP</td><td>OK https://example.com 200</td></tr><tr><td>2025-12-17T06:37:31.592792</td><td class='status-up'>UP</td><td>OK https://example.com 200</td></tr><tr><td>2025-12-17T06:37:27.033589</td><td class='status-up'>UP</td><td>OK https://example.com 200</td></tr><tr><td>2025-12-17T06:37:01.558490</td><td class='status-up'>UP</td><td>OK https://example.com 200</td></tr><tr><td>2025-12-17T06:36:56.988773</td><td class='status-up'>UP</td><td>OK https://example.com 200</td></tr><tr><td>2025-12-17T06:36:31.515193</td><td class='status-up'>UP</td><td>OK https://example.com 200</td></tr><tr><td>2025-12-17T06:36:26.951979</td><td class='status-up'>UP</td><td>OK https://example.com 200</td></tr><tr><td>2025-12-17T06:36:01.423103</td><td class='status-up'>UP</td><td>OK https://example.com 200</td></tr><tr><td>2025-12-17T06:35:56.917089</td><td class='status-up'>UP</td><td>OK https://example.com 200</td></tr><tr><td>2025-12-17T06:35:31.375518</td><td class='status-up'>UP</td><td>OK https://example.com 200</td></tr><tr><td>2025-12-17T06:35:26.869815</td><td class='status-up'>UP</td><td>OK https://example.com 200</td></tr><tr><td>2025-12-17T06:35:01.337954</td><td class='status-up'>UP</td><td>OK https://example.com 200</td></tr><tr><td>2025-12-17T06:34:56.832677</td><td class='status-up'>UP</td><td>OK https://example.com 200</td></tr><tr><td>2025-12-17T06:34:31.300910</td><td class='status-up'>UP</td><td>OK https://example.com 200</td></tr><tr><td>2025-12-17T06:34:26.797510</td><td class='status-up'>UP</td><td>OK https://example.com 200</td></tr><tr><td>2025-12-17T06:34:01.273431</td><td class='status-up'>UP</td><td>OK https://example.com 200</td></tr><tr><td>2025-12-17T06:33:56.742485</td><td class='status-up'>UP</td><td>OK https://example.com 200</td></tr><tr><td>2025-12-17T06:33:31.239250</td><td class='status-up'>UP</td><td>OK https://example.com 200</td></tr><tr><td>2025-12-17T06:33:26.709371</td><td class='status-up'>UP</td><td>OK https://example.com 200</td></tr>
+      <tr><td>2025-12-17T07:08:05.735548</td><td class='status-up'>UP</td><td>OK https://example.com 200</td></tr><tr><td>2025-12-17T07:08:03.132264</td><td class='status-up'>UP</td><td>OK https://example.com 200</td></tr><tr><td>2025-12-17T07:08:00.048928</td><td class='status-up'>UP</td><td>OK https://example.com 200</td></tr><tr><td>2025-12-17T07:07:49.822636</td><td class='status-up'>UP</td><td>OK https://example.com 200</td></tr><tr><td>2025-12-17T07:07:35.876332</td><td class='status-up'>UP</td><td>OK https://example.com 200</td></tr><tr><td>2025-12-17T07:07:35.699892</td><td class='status-up'>UP</td><td>OK https://example.com 200</td></tr><tr><td>2025-12-17T07:07:33.098376</td><td class='status-up'>UP</td><td>OK https://example.com 200</td></tr><tr><td>2025-12-17T07:07:30.014146</td><td class='status-up'>UP</td><td>OK https://example.com 200</td></tr><tr><td>2025-12-17T07:07:05.842171</td><td class='status-up'>UP</td><td>OK https://example.com 200</td></tr><tr><td>2025-12-17T07:07:05.665371</td><td class='status-up'>UP</td><td>OK https://example.com 200</td></tr><tr><td>2025-12-17T07:07:03.062109</td><td class='status-up'>UP</td><td>OK https://example.com 200</td></tr><tr><td>2025-12-17T07:06:59.977568</td><td class='status-up'>UP</td><td>OK https://example.com 200</td></tr><tr><td>2025-12-17T07:06:35.805690</td><td class='status-up'>UP</td><td>OK https://example.com 200</td></tr><tr><td>2025-12-17T07:06:33.027103</td><td class='status-up'>UP</td><td>OK https://example.com 200</td></tr><tr><td>2025-12-17T07:06:29.943543</td><td class='status-up'>UP</td><td>OK https://example.com 200</td></tr><tr><td>2025-12-17T07:06:05.769806</td><td class='status-up'>UP</td><td>OK https://example.com 200</td></tr><tr><td>2025-12-17T07:06:02.993438</td><td class='status-up'>UP</td><td>OK https://example.com 200</td></tr><tr><td>2025-12-17T07:05:59.908197</td><td class='status-up'>UP</td><td>OK https://example.com 200</td></tr><tr><td>2025-12-17T07:05:35.739163</td><td class='status-up'>UP</td><td>OK https://example.com 200</td></tr><tr><td>2025-12-17T07:05:32.954384</td><td class='status-up'>UP</td><td>OK https://example.com 200</td></tr><tr><td>2025-12-17T07:05:29.877913</td><td class='status-up'>UP</td><td>OK https://example.com 200</td></tr><tr><td>2025-12-17T07:05:05.701248</td><td class='status-up'>UP</td><td>OK https://example.com 200</td></tr><tr><td>2025-12-17T07:05:02.925061</td><td class='status-up'>UP</td><td>OK https://example.com 200</td></tr><tr><td>2025-12-17T07:04:59.842662</td><td class='status-up'>UP</td><td>OK https://example.com 200</td></tr><tr><td>2025-12-17T07:04:35.651154</td><td class='status-up'>UP</td><td>OK https://example.com 200</td></tr><tr><td>2025-12-17T07:04:32.884315</td><td class='status-up'>UP</td><td>OK https://example.com 200</td></tr><tr><td>2025-12-17T07:04:29.808373</td><td class='status-up'>UP</td><td>OK https://example.com 200</td></tr><tr><td>2025-12-17T07:04:05.616891</td><td class='status-up'>UP</td><td>OK https://example.com 200</td></tr><tr><td>2025-12-17T07:04:02.833182</td><td class='status-up'>UP</td><td>OK https://example.com 200</td></tr><tr><td>2025-12-17T07:03:59.761605</td><td class='status-up'>UP</td><td>OK https://example.com 200</td></tr>
     </tbody>
   </table>
 </div>
