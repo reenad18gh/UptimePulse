@@ -1,0 +1,105 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>UptimePulse Dashboard</title>
+<style>
+body {
+  font-family: Arial, sans-serif;
+  background: #f5f7fa;
+  margin: 24px;
+}
+.card {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 16px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+.big {
+  font-size: 24px;
+  font-weight: 700;
+}
+.muted {
+  color: #666;
+  font-size: 13px;
+}
+.status-up {
+  color: #0a8a3a;
+  font-weight: 700;
+}
+.status-down {
+  color: #c62828;
+  font-weight: 700;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 12px;
+}
+th {
+  background: #f0f2f5;
+  text-align: left;
+  padding: 10px;
+  font-size: 13px;
+}
+td {
+  border-bottom: 1px solid #eee;
+  padding: 10px;
+  font-size: 14px;
+}
+</style>
+</head>
+<body>
+
+<div class="card">
+  <div class="big">UptimePulse Dashboard</div>
+  <div class="muted">Generated UTC 2025-12-17T07:19:50.979615+00:00</div>
+</div>
+
+<div class="card">
+  <div class="big">Current status <span class="status-up">UP</span></div>
+  <div class="muted">Last checked UTC 2025-12-17T07:19:50.975235</div>
+  <div class="muted">Reason OK https://example.com 200</div>
+</div>
+
+<div class="grid">
+  <div class="card">
+    <div class="muted">Uptime last 30 samples</div>
+    <div class="big">100.00%</div>
+  </div>
+  <div class="card">
+    <div class="muted">Last outage duration</div>
+    <div class="big">-</div>
+  </div>
+  <div class="card">
+    <div class="muted">Samples shown</div>
+    <div class="big">30</div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="big">Latest samples</div>
+  <table>
+    <thead>
+      <tr>
+        <th>Timestamp UTC</th>
+        <th>Status</th>
+        <th>Reason</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>2025-12-17T07:19:50.975235</td><td class='status-up'>UP</td><td>OK https://example.com 200</td></tr><tr><td>2025-12-17T07:19:37.014100</td><td class='status-up'>UP</td><td>OK https://example.com 200</td></tr><tr><td>2025-12-17T07:19:36.586529</td><td class='status-up'>UP</td><td>OK https://example.com 200</td></tr><tr><td>2025-12-17T07:19:34.226849</td><td class='status-up'>UP</td><td>OK https://example.com 200</td></tr><tr><td>2025-12-17T07:19:32.984917</td><td class='status-up'>UP</td><td>OK https://example.com 200</td></tr><tr><td>2025-12-17T07:19:20.939675</td><td class='status-up'>UP</td><td>OK https://example.com 200</td></tr><tr><td>2025-12-17T07:19:06.980733</td><td class='status-up'>UP</td><td>OK https://example.com 200</td></tr><tr><td>2025-12-17T07:19:06.553548</td><td class='status-up'>UP</td><td>OK https://example.com 200</td></tr><tr><td>2025-12-17T07:19:04.178308</td><td class='status-up'>UP</td><td>OK https://example.com 200</td></tr><tr><td>2025-12-17T07:19:02.951605</td><td class='status-up'>UP</td><td>OK https://example.com 200</td></tr><tr><td>2025-12-17T07:18:50.902521</td><td class='status-up'>UP</td><td>OK https://example.com 200</td></tr><tr><td>2025-12-17T07:18:36.940318</td><td class='status-up'>UP</td><td>OK https://example.com 200</td></tr><tr><td>2025-12-17T07:18:36.517247</td><td class='status-up'>UP</td><td>OK https://example.com 200</td></tr><tr><td>2025-12-17T07:18:34.142327</td><td class='status-up'>UP</td><td>OK https://example.com 200</td></tr><tr><td>2025-12-17T07:18:32.914756</td><td class='status-up'>UP</td><td>OK https://example.com 200</td></tr><tr><td>2025-12-17T07:18:20.865919</td><td class='status-up'>UP</td><td>OK https://example.com 200</td></tr><tr><td>2025-12-17T07:18:06.903647</td><td class='status-up'>UP</td><td>OK https://example.com 200</td></tr><tr><td>2025-12-17T07:18:06.478905</td><td class='status-up'>UP</td><td>OK https://example.com 200</td></tr><tr><td>2025-12-17T07:18:04.113772</td><td class='status-up'>UP</td><td>OK https://example.com 200</td></tr><tr><td>2025-12-17T07:18:02.879436</td><td class='status-up'>UP</td><td>OK https://example.com 200</td></tr><tr><td>2025-12-17T07:17:50.828036</td><td class='status-up'>UP</td><td>OK https://example.com 200</td></tr><tr><td>2025-12-17T07:17:36.869665</td><td class='status-up'>UP</td><td>OK https://example.com 200</td></tr><tr><td>2025-12-17T07:17:36.440597</td><td class='status-up'>UP</td><td>OK https://example.com 200</td></tr><tr><td>2025-12-17T07:17:34.080224</td><td class='status-up'>UP</td><td>OK https://example.com 200</td></tr><tr><td>2025-12-17T07:17:31.810953</td><td class='status-up'>UP</td><td>OK https://example.com 200</td></tr><tr><td>2025-12-17T07:17:20.790363</td><td class='status-up'>UP</td><td>OK https://example.com 200</td></tr><tr><td>2025-12-17T07:17:06.829240</td><td class='status-up'>UP</td><td>OK https://example.com 200</td></tr><tr><td>2025-12-17T07:17:06.404854</td><td class='status-up'>UP</td><td>OK https://example.com 200</td></tr><tr><td>2025-12-17T07:17:04.039742</td><td class='status-up'>UP</td><td>OK https://example.com 200</td></tr><tr><td>2025-12-17T07:17:01.774820</td><td class='status-up'>UP</td><td>OK https://example.com 200</td></tr>
+    </tbody>
+  </table>
+</div>
+
+</body>
+</html>
